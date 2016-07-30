@@ -4,7 +4,8 @@ channels:
 dependencies:
 - pandas
 - shapely
-- fiona=1.6
+- geos=3.4.2
+- fiona
 - pyproj
 - rtree
 - six
