@@ -4,7 +4,7 @@ channels:
 dependencies:
 - pandas
 - shapely
-- fiona
+- fiona=1.6
 - pyproj
 - rtree
 - six
