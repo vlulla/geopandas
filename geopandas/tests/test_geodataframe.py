@@ -1010,7 +1010,6 @@ class TestConstructor:
         assert_series_equal(df["A"], pd.Series(range(3), name="A"))
 
     def test_dict_of_series(self):
-
         data = {
             "A": pd.Series(range(3)),
             "B": pd.Series(np.arange(3.0)),
@@ -1035,7 +1034,6 @@ class TestConstructor:
             GeoDataFrame(data, index=[1, 2])
 
     def test_dict_specified_geometry(self):
-
         data = {
             "A": range(3),
             "B": np.arange(3.0),
@@ -1097,7 +1095,6 @@ class TestConstructor:
         assert type(pddf) == pd.DataFrame
 
         for df in [gpdf, pddf]:
-
             res = GeoDataFrame(df)
             check_geodataframe(res)
 

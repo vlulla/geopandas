@@ -11,19 +11,16 @@ from geopandas import _compat as compat
 
 class TestMerging:
     def setup_method(self):
-
         self.gseries = GeoSeries([Point(i, i) for i in range(3)])
         self.series = pd.Series([1, 2, 3])
         self.gdf = GeoDataFrame({"geometry": self.gseries, "values": range(3)})
         self.df = pd.DataFrame({"col1": [1, 2, 3], "col2": [0.1, 0.2, 0.3]})
 
     def _check_metadata(self, gdf, geometry_column_name="geometry", crs=None):
-
         assert gdf._geometry_column_name == geometry_column_name
         assert gdf.crs == crs
 
     def test_merge(self):
-
         res = self.gdf.merge(self.df, left_on="values", right_on="col1")
 
         # check result is a GeoDataFrame
@@ -62,7 +59,6 @@ class TestMerging:
         assert isinstance(res.geometry, GeoSeries)
 
     def test_concat_axis0_crs(self):
-
         # CRS not set for both GeoDataFrame
         res = pd.concat([self.gdf, self.gdf])
         self._check_metadata(res)
@@ -104,7 +100,6 @@ class TestMerging:
             )
 
     def test_concat_axis1(self):
-
         res = pd.concat([self.gdf, self.df], axis=1)
 
         assert res.shape == (3, 4)
