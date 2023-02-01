@@ -889,7 +889,6 @@ GON (((-122.84000 49.00000, -120.0000...
         plot_series(expl_series[nan_idx], ax=ax, **merged_kwds)
 
     if legend and not color:
-
         if legend_kwds is None:
             legend_kwds = {}
         if "fmt" in legend_kwds:
@@ -943,7 +942,6 @@ GON (((-122.84000 49.00000, -120.0000...
             legend_kwds.setdefault("loc", "best")
             ax.legend(patches, categories, **legend_kwds)
         else:
-
             if cax is not None:
                 legend_kwds.setdefault("cax", cax)
             else:
@@ -958,7 +956,6 @@ GON (((-122.84000 49.00000, -120.0000...
 
 @doc(plot_dataframe)
 class GeoplotAccessor(PlotAccessor):
-
     _pandas_kinds = PlotAccessor._all_kinds
 
     def __call__(self, *args, **kwargs):

@@ -415,7 +415,6 @@ GON (((180.00000 -16.06713, 180.00000...
 
             # colormap exists in matplotlib
             if cmap in plt.colormaps():
-
                 color = np.apply_along_axis(
                     colors.to_hex,
                     1,
@@ -453,7 +452,6 @@ GON (((180.00000 -16.06713, 180.00000...
 
             # get bins
             if scheme is not None:
-
                 if classification_kwds is None:
                     classification_kwds = {}
                 if "k" not in classification_kwds:
@@ -469,7 +467,6 @@ GON (((180.00000 -16.06713, 180.00000...
                 )
 
             else:
-
                 bins = np.linspace(vmin, vmax, 257)[1:]
                 binning = classify(
                     np.asarray(gdf[column][~nan_idx]), "UserDefined", bins=bins
@@ -642,7 +639,6 @@ GON (((180.00000 -16.06713, 180.00000...
 
             _categorical_legend(m, caption, categories, legend_colors)
         elif column is not None:
-
             cbar = legend_kwds.pop("colorbar", True)
             colormap_kwds = {}
             if "max_labels" in legend_kwds:

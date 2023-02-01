@@ -1394,7 +1394,6 @@ class GeometryArray(ExtensionArray):
 
 
 def _get_common_crs(arr_seq):
-
     crs_set = {arr.crs for arr in arr_seq}
     crs_not_none = [crs for crs in crs_set if crs is not None]
     names = [crs.name for crs in crs_not_none]
