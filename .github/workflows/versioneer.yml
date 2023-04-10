@@ -23,7 +23,7 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         path: versioneer.py
-    - uses: peter-evans/create-pull-request@v4
+    - uses: peter-evans/create-pull-request@v5
       with:
         title: "Update Versioneer"
         branch: update-versioneer
